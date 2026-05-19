@@ -1,0 +1,105 @@
+%%
+%% This is file `beamerthemeavenirnext.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% beamerthemeavenirnext.dtx  (with options: `package')
+%% ---------------------------------------------------------------------------
+%% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
+%% contributors can be found at
+%% 
+%%     https://github.com/matze/avenirnexttheme/graphs/contributors
+%% 
+%% and the original template was based on the HSRM theme by Benjamin Weiss.
+%% 
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+%% International License (https://creativecommons.org/licenses/by-sa/4.0/).
+%% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeavenirnext}
+  [2017/01/23 v1.2 Avenir Next Beamer theme]
+\RequirePackage{etoolbox}
+\RequirePackage{pgfopts}
+\pgfkeys{/avenirnext/.cd,
+  .search also={
+    /avenirnext/inner,
+    /avenirnext/outer,
+    /avenirnext/color,
+    /avenirnext/font,
+  }
+}
+\pgfkeys{
+  /avenirnext/titleformat plain/.cd,
+    .is choice,
+    regular/.code={%
+      \let\avenirnext@plaintitleformat\@empty%
+      \setbeamerfont{standout}{shape=\normalfont}%
+    },
+    smallcaps/.code={%
+      \let\avenirnext@plaintitleformat\@empty%
+      \setbeamerfont{standout}{shape=\scshape}%
+    },
+    allsmallcaps/.code={%
+      \let\avenirnext@plaintitleformat\MakeLowercase%
+      \setbeamerfont{standout}{shape=\scshape}%
+      \PackageWarning{beamerthemeavenirnext}{%
+        Be aware that titleformat plain=allsmallcaps can lead to problems%
+      }
+    },
+    allcaps/.code={%
+      \let\avenirnext@plaintitleformat\MakeUppercase%
+      \setbeamerfont{standout}{shape=\normalfont}%
+      \PackageWarning{beamerthemeavenirnext}{%
+        Be aware that titleformat plain=allcaps can lead to problems%
+      }
+    },
+}
+\pgfkeys{
+  /avenirnext/titleformat/.code=\pgfkeysalso{
+      font/titleformat title=#1,
+      font/titleformat subtitle=#1,
+      font/titleformat section=#1,
+      font/titleformat frame=#1,
+      titleformat plain=#1,
+    }
+}
+\pgfkeys{/avenirnext/.cd,
+  usetitleprogressbar/.code=\pgfkeysalso{outer/progressbar=frametitle},
+  noslidenumbers/.code=\pgfkeysalso{outer/numbering=none},
+  usetotalslideindicator/.code=\pgfkeysalso{outer/numbering=fraction},
+  nosectionslide/.code=\pgfkeysalso{inner/sectionpage=none},
+  darkcolors/.code=\pgfkeysalso{color/background=dark},
+  blockbg/.code=\pgfkeysalso{color/block=fill, inner/block=fill},
+}
+\newcommand{\avenirnext@setdefaults}{
+  \pgfkeys{/avenirnext/.cd,
+    titleformat plain=regular,
+  }
+}
+\useinnertheme{avenirnext}
+\useoutertheme{avenirnext}
+\usecolortheme{avenirnext}
+\usefonttheme{avenirnext}
+\AtEndPreamble{%
+  \@ifpackageloaded{pgfplots}{%
+    \RequirePackage{pgfplotsthemetol}
+  }{}
+}
+\newcommand{\metroset}[1]{\pgfkeys{/avenirnext/.cd,#1}}
+\def\avenirnext@plaintitleformat#1{#1}
+\newcommand{\plain}[2][]{%
+  \PackageWarning{beamerthemeavenirnext}{%
+    The syntax `\plain' may be deprecated in a future version of Avenir Next.
+    Please use a frame with [standout] instead.
+  }
+  \begin{frame}[standout]{#1}
+    \avenirnext@plaintitleformat{#2}
+  \end{frame}
+}
+\newcommand{\mreducelistspacing}{\vspace{-\topsep}}
+\avenirnext@setdefaults
+\ProcessPgfOptions{/avenirnext}
+\endinput
+%%
+%% End of file `beamerthemeavenirnext.sty'.

@@ -1,0 +1,30 @@
+# [UMBC Beamer Template](https://styleguide.umbc.edu/presentation-templates/)
+
+## Documentation from UMBC's Brand and Style Guide
+1. The frame title image header is placed using the following code:
+```latex
+\addtobeamertemplate{frametitle}{\nointerlineskip%
+\vbox to \z@{\hbox to \z@{\hskip-\beamer@leftmargin%
+\includegraphics[width=\paperwidth,height=1.15cm]{frametitle-logo}\hss}\vss}}
+```
+If you do not want the UMBC logo in the frametitle then simply use frametitle.jpg image
+
+2. If you want a Wider slide then use following command inside the slide and put your content inside this tag:
+```latex
+\Wider[width]{
+
+% Content
+
+}
+```
+3. The following code provides the color for block environment:
+```latex
+\setbeamercolor{block title}{use=structure,fg=black,bg=umbcgold}
+\setbeamercolor{block body}{use=structure,fg=black,bg=umbcgoldshadow}
+```
+4. The file needs to be compiled with LuaLatex or XeLatex for the fontspec package. If you want to compile with PdfLatex then simply
+comment out the following two lines:
+```latex
+\usepackage{fontspec}
+\setmainfont{Candara}
+```

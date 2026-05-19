@@ -213,7 +213,7 @@
 % Quantum Computing Background Slides — cleaned version
 % =========================================================
 
-\section{Quantum Computing Background}
+\section{Quantum Background}
 
 % ---------------------------------------------------------
 % Slide 1
@@ -759,25 +759,9 @@
 			}
 		\end{frame}
 		
-		\begin{frame}{Future Work}
-			\Wider[2em]{
-				\textbf{Next computational steps:}
-				
-				\begin{itemize}
-					\item implement payoff-landscape plots over \((\theta,\phi,\gamma)\),
-					\item visualize whether increasing \(\gamma\) changes best-response behavior,
-					\item test when \((Q,Q)\) is stable under the restricted EWL strategy set.
-				\end{itemize}
-				
-				\begin{block}{Scope}
-					Although a theoretical project, the next step is connecting the theory via computation and statistical learning.
-				\end{block}
-			}
-		\end{frame}
+		\section{Takeaways}
 		
-		\section{Limitations and Open Problems}
-		
-		\begin{frame}{Limitations and Open Problems}
+		\begin{frame}{Limitations}
 			\Wider[2em]{
 				
 				\vspace{1em}
@@ -790,13 +774,11 @@
 					\item \textbf{Interpretation:} Quantum advantage may depend on whether entanglement is treated as a resource provided before the game.
 				\end{itemize}
 				
-				\begin{block}{Open Question}
+				\begin{block}{Open Problem}
 					When does quantum game theory produce new strategic behavior rather than a reformulation of correlated/mixed classical strategies?
 				\end{block}
 			}
 		\end{frame}
-		
-		\section{Conclusion}
 		
 		\begin{frame}{Conclusion}
 			\Wider[2em]{
@@ -809,6 +791,22 @@
 				
 				\begin{block}{Key Takeaway}
 					Quantum game theory serves as a theoretical bridge between equilibrium analysis, optimization, and learning.
+				\end{block}
+			}
+		\end{frame}
+		
+		\begin{frame}{Future Work}
+			\Wider[2em]{
+				\textbf{Next steps:}
+				
+				\begin{itemize}
+					\item implement payoff-landscape plots over \((\theta,\phi,\gamma)\),
+					\item visualize whether increasing \(\gamma\) changes best-response behavior,
+					\item test when \((Q,Q)\) is stable under the restricted EWL strategy set.
+				\end{itemize}
+				
+				\begin{block}{Scope}
+					Although a theoretical project, my goal is connecting the theory to statistical learning via computation/practical implementation.
 				\end{block}
 			}
 		\end{frame}

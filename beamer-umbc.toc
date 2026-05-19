@@ -1,9 +1,8 @@
 \beamer@sectionintoc {1}{Project Framing}{3}{0}{1}
 \beamer@sectionintoc {2}{Classical Background}{5}{0}{2}
-\beamer@sectionintoc {3}{Quantum Computing Background}{10}{0}{3}
+\beamer@sectionintoc {3}{Quantum Background}{10}{0}{3}
 \beamer@sectionintoc {4}{Quantum Game Theory}{15}{0}{4}
 \beamer@sectionintoc {5}{Related Paper Analysis}{25}{0}{5}
 \beamer@sectionintoc {6}{Research Direction}{29}{0}{6}
 \beamer@sectionintoc {7}{Learning Theory}{31}{0}{7}
-\beamer@sectionintoc {8}{Limitations and Open Problems}{35}{0}{8}
-\beamer@sectionintoc {9}{Conclusion}{37}{0}{9}
+\beamer@sectionintoc {8}{Takeaways}{34}{0}{8}

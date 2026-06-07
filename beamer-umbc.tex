@@ -94,12 +94,12 @@
 	
 	{
 		
-		\section{Project Framing}
+		\section{Introduction}
 		
 		
 		\begin{frame}{Exploration}
 			\Wider[2em]{
-				\textbf{We aim to analyze equilibria in classical and quantum strategic games by investing these theorhetical questions:}
+				\textbf{The goal is to analyze equilibria in classical and quantum strategic games by investigating these theoretical questions:}
 				
 				\vspace{2em}
 				
@@ -111,8 +111,7 @@
 			}
 		\end{frame}
 		
-		\section{Classical Background}
-		
+		\section{Background}
 		
 		\begin{frame}{Classical prisoner's dilemma}
 			\Wider[5em]{
@@ -205,163 +204,149 @@
 				(C,C) \text{ is Pareto superior.}
 				\]
 				
-				\textcolor{red}{This paradox is known as the prisoner's dilemma.}
+				\vspace{1em}
+				
+				\textcolor{red}{\textbf{This paradox is known as the prisoner's dilemma.}}
 			}
 		\end{frame}
 		
-% =========================================================
-% Quantum Computing Background Slides — cleaned version
-% =========================================================
-
-\section{Quantum Background}
-
-% ---------------------------------------------------------
-% Slide 1
-% ---------------------------------------------------------
-
-\begin{frame}{Background: Quantum Computing}
-	\Wider[2em]{
-		
-		\textbf{Quantum computing} processes information using principles from quantum mechanics, especially:
-		
-		\begin{itemize}
-			\setlength{\itemsep}{0.45em}
-			\item \textbf{Superposition}
-			\item \textbf{Entanglement}
-			\item \textbf{Measurement}
-		\end{itemize}
-		
-		\vspace{1em}
-		
-		\begin{block}{Goal}
-			Quantum game theory studies how quantum phenomena alter strategic decision-making and equilibrium behavior.
-		\end{block}
-		
-	}
-\end{frame}
-
-% ---------------------------------------------------------
-% Slide 2
-% ---------------------------------------------------------
-
-\begin{frame}{Superposition: Bits vs. Qubits}
-	\Wider[2em]{
-		
-		\begin{columns}[c,totalwidth=\textwidth]
-			
-			% -------------------------------------------------
-			% Classical bit
-			% -------------------------------------------------
-			
-			\begin{column}{0.45\textwidth}
-				\centering
+		\begin{frame}{Quantum Computing}
+			\Wider[2em]{
 				
-				\vspace{0.2cm}
+				\textbf{Quantum computing} processes information using principles from quantum mechanics or quantum phenomena, especially:
 				
-				\begin{minipage}[c][5cm][c]{\linewidth}
-					\centering
+				\begin{itemize}
+					\setlength{\itemsep}{0.45em}
+					\item \textbf{Superposition}
+					\item \textbf{Entanglement}
+					\item \textbf{Measurement}
+				\end{itemize}
+				
+			}
+		\end{frame}
+		
+		% ---------------------------------------------------------
+		% Slide 2
+		% ---------------------------------------------------------
+		
+		\begin{frame}{Superposition: Bits vs. Qubits}
+			\Wider[2em]{
+				
+				\begin{columns}[c,totalwidth=\textwidth]
 					
-					\begin{tikzpicture}[scale=0.55]
+					% -------------------------------------------------
+					% Classical bit
+					% -------------------------------------------------
+					
+					\begin{column}{0.45\textwidth}
+						\centering
 						
-						\node at (0,1.8) {\Large \(0\)};
-						\fill[umbcaokteal] (1.4,1.8) circle (0.18);
+						\vspace{0.2cm}
 						
-						\node at (0,-1.8) {\Large \(1\)};
-						\fill[umbcred] (1.4,-1.8) circle (0.18);
+						\begin{minipage}[c][5cm][c]{\linewidth}
+							\centering
+							
+							\begin{tikzpicture}[scale=0.55]
+								
+								\node at (0,1.8) {\Large \(0\)};
+								\fill[umbcaokteal] (1.4,1.8) circle (0.18);
+								
+								\node at (0,-1.8) {\Large \(1\)};
+								\fill[umbcred] (1.4,-1.8) circle (0.18);
+								
+							\end{tikzpicture}
+							
+							\vspace{0.4cm}
+							
+							{\scriptsize Classical bit stores either \(0\) or \(1\)}
+							
+						\end{minipage}
 						
-					\end{tikzpicture}
+					\end{column}
 					
-					\vspace{0.4cm}
+					% -------------------------------------------------
+					% Bloch sphere
+					% -------------------------------------------------
 					
-					{\scriptsize Classical bit stores either \(0\) or \(1\)}
+					\begin{column}{0.33\textwidth}
+						\centering
+						
+						\begin{minipage}[c][5cm][c]{\linewidth}
+							\centering
+							
+							\includegraphics[width=0.78\linewidth]{bloch.png}
+							
+							{\scriptsize Bloch sphere of a qubit}
+							
+						\end{minipage}
+						
+					\end{column}
 					
-				\end{minipage}
+				\end{columns}
 				
-			\end{column}
-			
-			% -------------------------------------------------
-			% Bloch sphere
-			% -------------------------------------------------
-			
-			\begin{column}{0.33\textwidth}
-				\centering
+				A qubit may exist in a superposition:
+				\[
+				|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,
+				\qquad
+				|\alpha|^2 + |\beta|^2 = 1.
+				\]
 				
-				\begin{minipage}[c][5cm][c]{\linewidth}
-					\centering
-					
-					\includegraphics[width=0.78\linewidth]{bloch.png}
-					
-					{\scriptsize Bloch sphere of a qubit}
-					
-				\end{minipage}
+			}
+		\end{frame}
+		
+		% ---------------------------------------------------------
+		% Slide 3
+		% ---------------------------------------------------------
+		
+		\begin{frame}{Measurement Problem}
+			\Wider[2em]{
 				
-			\end{column}
-			
-		\end{columns}
+				A quantum state may contain multiple possible outcomes simultaneously until measured, collapsing the state probabilistically:
+				\[
+				|0\rangle \text{ with probability } |\alpha|^2,
+				\qquad
+				|1\rangle \text{ with probability } |\beta|^2.
+				\]
+				
+				\begin{center}
+					\includegraphics[width=0.32\textwidth]{Schrodingers_cat.pdf}
+					
+					{\scriptsize Schrödinger's cat: superposition before observation}
+				\end{center}
+				
+				\begin{block}{Interpretation}
+					Quantum systems evolve continuously until measurement.
+				\end{block}
+				
+			}
+		\end{frame}
 		
-		A qubit may exist in a superposition:
-		\[
-		|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,
-		\qquad
-		|\alpha|^2 + |\beta|^2 = 1.
-		\]
+		% ---------------------------------------------------------
+		% Slide 4
+		% ---------------------------------------------------------
 		
-	}
-\end{frame}
-
-% ---------------------------------------------------------
-% Slide 3
-% ---------------------------------------------------------
-
-\begin{frame}{Measurement Problem}
-	\Wider[2em]{
-		
-		A quantum state may contain multiple possible outcomes simultaneously until measured, collapsing the state probabilistically:
-		\[
-		|0\rangle \text{ with probability } |\alpha|^2,
-		\qquad
-		|1\rangle \text{ with probability } |\beta|^2.
-		\]
-		
-		\begin{center}
-			\includegraphics[width=0.32\textwidth]{Schrodingers_cat.pdf}
-			
-			{\scriptsize Schrödinger's cat: superposition before observation}
-		\end{center}
-		
-		\begin{block}{Interpretation}
-			Quantum systems evolve continuously until measurement.
-		\end{block}
-		
-	}
-\end{frame}
-
-% ---------------------------------------------------------
-% Slide 4
-% ---------------------------------------------------------
-
-\begin{frame}{Entanglement}
-	\Wider[2em]{
-		
-		Two quantum systems are \textbf{entangled} when their joint state cannot be separated into independent components:
-		\[
-		|\psi\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle.
-		\]
-		
-		This means:
-		\begin{itemize}
-			\setlength{\itemsep}{0.35em}
-			\item measuring one system reveals information about the other,
-			\item correlations exist beyond classical independence,
-			\item strategies may become correlated through entanglement.
-		\end{itemize}
-		
-		\begin{block}{Connection to Quantum Game Theory}
-			Entanglement changes the strategic correlation structure of a game and may alter equilibrium behavior.
-		\end{block}
-		
-	}
-\end{frame}
+		\begin{frame}{Entanglement}
+			\Wider[2em]{
+				
+				Two quantum systems are \textbf{entangled} when their joint state cannot be separated into independent components:
+				\[
+				|\psi\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle.
+				\]
+				
+				This means:
+				\begin{itemize}
+					\setlength{\itemsep}{0.35em}
+					\item measuring one system reveals information about the other,
+					\item correlations exist beyond classical independence,
+					\item strategies may become correlated through entanglement.
+				\end{itemize}
+				
+				\begin{block}{Connection to Quantum Game Theory}
+					Entanglement changes the strategic correlation structure of a game and may alter equilibrium behavior.
+				\end{block}
+				
+			}
+		\end{frame}
 		
 		\section{Quantum Game Theory}
 		
@@ -415,7 +400,7 @@
 		
 		\begin{frame}{Entanglement Parameter}
 			\Wider[2em]{
-				The entangling operator is commonly written as:
+				Let $D$ denote the defection operator. The entangling operator is commonly written as:
 				\[
 				J(\gamma)
 				=
@@ -424,29 +409,22 @@
 				\gamma \in \left[0,\frac{\pi}{2}\right].
 				\]
 				
-				\[
-				\gamma = 0
-				\quad \Rightarrow \quad
-				\text{classical game}.
-				\]
-				
-				\[
-				\gamma = \frac{\pi}{2}
-				\quad \Rightarrow \quad
-				\text{maximally entangled quantum game}.
-				\]
-				
-				\begin{block}{Interpretation}
-					The parameter \(\gamma\) controls the transition from independent classical choices to correlated quantum strategic behavior.
-				\end{block}
+				\begin{align*}
+					\gamma &= 0
+					&\Rightarrow& \quad
+					\text{classical game}, \\
+					\gamma &= \frac{\pi}{2}
+					&\Rightarrow& \quad
+					\text{maximally entangled quantum game}.
+				\end{align*}
 			}
 		\end{frame}
 		
-		\begin{frame}{Entanglement and Equilibrium Transition}
+		\begin{frame}{Entanglement Visualized}
 			\Wider[2em]{
 				
 				\begin{center}
-					\begin{tikzpicture}[scale=1]
+					\begin{tikzpicture}[scale=0.8]
 						
 						\draw[thick,->] (0,0) -- (10,0);
 						
@@ -472,7 +450,7 @@
 				\vspace{0.3cm}
 				
 				\begin{block}{Interpretation}
-					Increasing entanglement changes the strategic correlation structure of the game, shifting equilibrium behavior from classical defection toward cooperative quantum equilibria.
+					Increasing entanglement changes the strategic correlation structure of the game, shifting equilibrium behavior from classical defection toward cooperative quantum equilibria under restricted EWL strategy.
 				\end{block}
 				
 			}
@@ -549,14 +527,14 @@
 				
 				\vspace{0.3cm}
 				
-				Measurement collapses the final quantum state into one of these classical outcomes.
+				Measurement collapses the quantum state into \textbf{one} classical outcome.
 				
 			}
 		\end{frame}
 		
 		\begin{frame}{Expected Payoffs}
 			\Wider[2em]{
-				After measurement, the final quantum state produces probabilities for the four classical outcomes:
+				After measurement, the final quantum state produces probabilities for
 				\[
 				P_{CC}, \qquad P_{CD}, \qquad P_{DC}, \qquad P_{DD}.
 				\]
@@ -579,7 +557,7 @@
 		
 		\begin{frame}{Equilibrium Search as Optimization}
 			\Wider[2em]{
-				For fixed opponent strategy \(U_B\), player A solves:
+				For fixed opponent strategy \(U_B\), player A solves
 				\[
 				U_A^*
 				\in
@@ -587,7 +565,7 @@
 				\mathbb{E}[u_A(U_A,U_B;\gamma)].
 				\]
 				
-				A Nash equilibrium is a pair \((U_A^*,U_B^*)\) such that:
+				A Nash equilibrium is a pair \((U_A^*,U_B^*)\) such that
 				\[
 				\mathbb{E}[u_A(U_A^*,U_B^*)]
 				\geq
@@ -599,24 +577,25 @@
 				\mathbb{E}[u_B(U_A^*,U_B)].
 				\]
 				
-				\begin{block}{Learning-Theoretic View}
-					The strategy space is continuous and matrix-valued, so equilibrium search resembles nonconvex policy optimization rather than finite action selection.
+				\begin{block}{Interpretation}
+					Since the admissible strategy space is continuous, equilibrium search becomes a nonconvex policy optimization problem rather than finite action selection.
 				\end{block}
 			}
 		\end{frame}
 		
 		\begin{frame}{Numerical Experiment}
 			\Wider[2em]{
+				
+				\vspace{1em}
+				
 				To make the theory testable, the project can simulate the EWL game over a grid of strategy parameters:
 				
-				\vspace{0.15cm}
-				
 				\begin{enumerate}
-					\item Sweep entanglement values $\gamma \in [0,\frac{\pi}{2}]$
-					\item Grid-search player strategies $U(\theta,\phi)$
-					\item Compute $|\psi_f\rangle = J^\dagger(U_A\otimes U_B)J|CC\rangle$
-					\item Convert amplitudes into outcome probabilities: $P_{CC},P_{CD},P_{DC},P_{DD}$
-					\item Plot expected payoffs and approximate best responses
+					\item Sweep entanglement values $\gamma \in [0,\frac{\pi}{2}]$.
+					\item Grid-search player strategies $U(\theta,\phi)$.
+					\item Compute $|\psi_f\rangle = J^\dagger(U_A\otimes U_B)J|CC\rangle$.
+					\item Convert amplitudes into outcome probabilities: \[P_{CC},P_{CD},P_{DC},P_{DD}.\]
+					\item Plot expected payoffs and approximate best responses.
 				\end{enumerate}
 				
 				\begin{block}{Expected Output}
@@ -625,34 +604,26 @@
 			}
 		\end{frame}
 		
-		\section{Related Paper Analysis}
+		\section{Literature Review and Analysis}
 		
 		\begin{frame}{Paper 1: Meyer, \textit{Quantum Strategies}}
 			\Wider[2em]{
-				\textbf{Main contribution:} Meyer showed that a player with access to quantum strategies can outperform a classical opponent in a simple strategic game.
 				
-				\vspace{0.2cm}
+				Meyer, one of the earliest pioneers of quantum advantage in game theory, proposed that a player with access to quantum strategies can outperform an opponent restricted to classical strategies.
 				
-				\textbf{Relevance:}
-				\begin{itemize}
-					\item One of the earliest examples of quantum advantage in game theory.
-					\item Superposition can behave differently from classical randomization.
-				\end{itemize}
+				\vspace{3em}
 				
-				\begin{block}{Relevance}
-					Meyer's paper motivates the idea that strategy spaces can be expanded by quantum mechanics, and introduces the broader question: \textbf{what happens when all players have quantum strategies?}
+				\begin{block}{Interpretation}
+					His work motivated the broader idea that quantum mechanics can fundamentally expand strategic action spaces, raising the question: what happens when \textbf{all} players have quantum strategies?
 				\end{block}
 			}
 		\end{frame}
 		
 		\begin{frame}{Paper 2: Eisert--Wilkens--Lewenstein}
 			\Wider[2em]{
-				\textbf{Main contribution:} EWL introduced a quantum version of prisoner's dilemma. Under \textit{maximal} entanglement, the classical equilibrium $(D,D)$ can be replaced by the quantum equilibrium $(Q,Q)$.
+				EWL introduced a quantum version of prisoner's dilemma. Under \textit{maximal} entanglement and a restricted strategy space, the classical equilibrium \((D,D)\) can be replaced by the quantum equilibrium \((Q,Q)\), at which both players receive the cooperative payoff \((R,R)\).
 				
-				At \((Q,Q)\), both players receive the cooperative payoff
-				\[
-				(R,R).
-				\]
+				\vspace{3em}
 				
 				\begin{block}{Interpretation}
 					Entanglement allows stable cooperation \textit{without} communication.
@@ -662,16 +633,59 @@
 		
 		\begin{frame}{Paper 3: Benjamin--Hayden Critique}
 			\Wider[2em]{
-				\textbf{Main contribution:} Benjamin and Hayden argued that the EWL result depends strongly on the restricted set of allowed strategies. If players are allowed to use a larger set of unitary operations, then:
+				
+				Benjamin and Hayden argued that the EWL result depends on the restricted allowable strategy space. If players are permitted to use a larger class of unitary operations, then:
+				
 				\begin{itemize}
 					\item the proposed quantum equilibrium may no longer be stable,
-					\item counter-strategies may exist,
-					\item the cooperative resolution becomes less automatic.
+					\item counter-strategies may emerge,
+					\item cooperative outcomes become less automatic.
 				\end{itemize}
 				
-				\begin{block}{Relevance}
-					This critique turns the project from ``quantum games solve prisoner's dilemma'' into a more careful question about assumptions, strategy spaces, and equilibrium stability.
+				\begin{block}{Interpretation}
+					This critique reframes the project from ``quantum games solve prisoner's dilemma'' into an analysis of underlying assumptions, admissible strategy spaces, and equilibrium stability.
 				\end{block}
+				
+			}
+		\end{frame}
+		
+		\begin{frame}{\large Restricted vs. Expanded Strategy Spaces}
+			\Wider[2em]{
+				
+				\begin{columns}[T,totalwidth=\textwidth]
+					
+					\begin{column}{0.48\textwidth}
+						
+						\textbf{Restricted EWL Space}
+						
+						\begin{itemize}
+							\item Strategies use the two-parameter family \(U(\theta,\phi)\)
+							\item Classical \(C,D\) and quantum \(Q\) are included
+							\item \((Q,Q)\) can become stable at maximal entanglement
+						\end{itemize}
+						
+					\end{column}
+					
+					\begin{column}{0.48\textwidth}
+						
+						\textbf{Expanded Unitary Space}
+						
+						\begin{itemize}
+							\item Players may access a larger class of local unitaries
+							\item Counter-strategies can appear
+							\item Cooperative equilibrium is no longer automatic
+						\end{itemize}
+						
+					\end{column}
+					
+				\end{columns}
+				
+				\vspace{1em}
+				
+				\begin{block}{Numerical Implication}
+					Results should explicitly state which strategy space was searched; otherwise, claims about equilibrium stability become ambiguous.
+				\end{block}
+				
 			}
 		\end{frame}
 		
@@ -702,8 +716,8 @@
 				\mathbb{E}[u_B].
 				\]
 				
-				\begin{block}{Connection to Statistical Learning}
-					This resembles multi-agent policy-gradient learning: agents iteratively update parameterized strategies using observed payoff signals.
+				\begin{block}{Connection to Learning}
+					This resembles conceptual policy-gradient dynamics in multi-agent learning: agents iteratively update parameterized strategies using observed payoff signals.
 				\end{block}
 				
 				\begin{block}{Deliverables}
@@ -713,17 +727,15 @@
 			}
 		\end{frame}
 		
-		\section{Learning Theory}
-		
-		\begin{frame}{Statistical Learning}
+		\begin{frame}{Learning Theory}
 			\Wider[2em]{
 				
-				A player searching for a good quantum strategy is solving an optimization problem:
+				Searching for a quantum strategy is solving an \textbf{optimization} problem:
 				\[
 				\argmax_{U_A} \; \mathbb{E}[u_A(U_A,U_B)].
 				\]
 				
-				In repeated play, agents could update strategies similar to:
+				In \textbf{repeated} play, agents could update strategies similar to:
 				\begin{itemize}
 					\item reinforcement learning,
 					\item policy optimization,
@@ -732,7 +744,7 @@
 				\end{itemize}
 				
 				\begin{block}{Interpretation}
-					Quantum equilibrium search can be viewed as learning over a continuous unitary strategy space.
+					Quantum equilibrium search may be interpreted as learning over continuous unitary strategy spaces.
 				\end{block}
 			}
 		\end{frame}
@@ -768,9 +780,9 @@
 				
 				\begin{itemize}
 					\item \textbf{Restricted strategy spaces:} EWL's cooperative equilibrium depends on which unitary strategies are allowed.
-					\item \textbf{Physical implementation:} Real quantum systems are affected by noise and decoherence.
-					\item \textbf{Equilibrium stability:} Enlarging the strategy set may introduce counter-strategies.
-					\item \textbf{Learning dynamics:} It is unclear whether adaptive agents would actually converge to the quantum equilibrium.
+					\item \textbf{Curse of physicality:} Current quantum systems are affected by noise and decoherence.
+					\item \textbf{Equilibrium instability:} Enlarging the strategy set may introduce counter-strategies.
+					\item \textbf{Learning dynamics:} It remains unclear whether adaptive agents converge to stable quantum equilibria.
 					\item \textbf{Interpretation:} Quantum advantage may depend on whether entanglement is treated as a resource provided before the game.
 				\end{itemize}
 				
@@ -783,65 +795,96 @@
 		\begin{frame}{Conclusion}
 			\Wider[2em]{
 				
-				The EWL protocol, the first pioneer of quantum game theory, suggests that entanglement can convert the inefficient classical equilibrium of prisoner's dilemma into a cooperative quantum equilibrium.
+				The EWL protocol, one of the foundational models in quantum game theory, suggests that entanglement can shift the classical equilibrium of prisoner's dilemma toward a cooperative quantum equilibrium.
 				
-				\vspace{0.2cm}
+				\vspace{0.4cm}
 				
-				\textbf{However}, the Benjamin--Hayden critique shows that this conclusion is not unconditional. The stability of the result depends on how the quantum strategy space is defined.
+				\textbf{However}, the Benjamin--Hayden critique shows that this conclusion is not unconditional. The stability of the result depends critically on how the quantum strategy space is defined.
 				
-				\begin{block}{Key Takeaway}
-					Quantum game theory serves as a theoretical bridge between equilibrium analysis, optimization, and learning.
+				\vspace{1em}
+				
+				\begin{block}{Main Takeaway}
+					Quantum game theory may serve as a theoretical bridge between equilibrium analysis, optimization, and learning.
 				\end{block}
+				
 			}
 		\end{frame}
 		
 		\begin{frame}{Future Work}
 			\Wider[2em]{
-				\textbf{Next steps:}
 				
-				\begin{itemize}
-					\item implement payoff-landscape plots over \((\theta,\phi,\gamma)\),
-					\item visualize whether increasing \(\gamma\) changes best-response behavior,
-					\item test when \((Q,Q)\) is stable under the restricted EWL strategy set.
-				\end{itemize}
+				Although primarily theoretical, I aim to connect quantum game theory to reinforcement learning and computational optimization through neural policies over continuous unitary strategy spaces.
 				
-				\begin{block}{Scope}
-					Although a theoretical project, my goal is connecting the theory to statistical learning via computation/practical implementation.
+				\vspace{1em}
+				
+				\begin{block}{Next Steps}
+					\begin{itemize}
+						\item Implement payoff-landscape visualizations over \((\theta,\phi,\gamma)\).
+						\item Analyze \textit{how} entanglement changes best-response behavior.
+						\item Study convergence and stability under policy-gradient updates.
+						\item Test \((Q,Q)\) stability under the restricted EWL strategy space.
+					\end{itemize}
 				\end{block}
 			}
 		\end{frame}
 		
 		\begin{frame}{References}
-			\tiny
-			\setlength{\parskip}{0pt}
-			\setlength{\baselineskip}{5.5pt}
+			\scriptsize
+			\RaggedRight
+			\setlength{\parskip}{0.25em}
 			
 			\begin{columns}[T,totalwidth=\textwidth]
 				
 				\begin{column}{0.49\textwidth}
-					[1] David A. Meyer. \textit{Quantum strategies}. Phys. Rev. Lett., 82(5):1052--1055, 1999.
 					
-					[2] Jens Eisert, Martin Wilkens, and Maciej Lewenstein. \textit{Quantum games and quantum strategies}. Phys. Rev. Lett., 83(15):3077--3080, 1999.
+					[1] D. Meyer.
+					\textit{Quantum Strategies}.
+					Phys. Rev. Lett., 82(5):1052--1055, 1999.
 					
-					[3] Simon C. Benjamin and Patrick M. Hayden. \textit{Comment on ``Quantum games and quantum strategies''}. Phys. Rev. Lett., 87(6), 2001.
+					[2] J. Eisert, M. Wilkens, and M. Lewenstein.
+					\textit{Quantum Games and Quantum Strategies}.
+					Phys. Rev. Lett., 83(15):3077--3080, 1999.
 					
-					[4] John Nash. \textit{Non-cooperative games}. Annals of Mathematics, 54(2):286--295, 1951.
+					[3] S. Benjamin and P. Hayden.
+					\textit{Comment on ``Quantum Games and Quantum Strategies''}.
+					Phys. Rev. Lett., 87(6), 2001.
 					
-					[5] Richard S. Sutton and Andrew G. Barto. \textit{Reinforcement Learning: An Introduction}. MIT Press, 2018.
+					[4] J. Nash.
+					\textit{Non-Cooperative Games}.
+					Ann. Math., 54(2):286--295, 1951.
 					
-					[6] Michael A. Nielsen and Isaac L. Chuang. \textit{Quantum Computation and Quantum Information}. Cambridge University Press, 2010.
+					[5] R. Sutton and A. Barto.
+					\textit{Reinforcement Learning: An Introduction}.
+					MIT Press, 2018.
+					
+					[6] M. Nielsen and I. Chuang.
+					\textit{Quantum Computation and Quantum Information}.
+					Cambridge Univ. Press, 2010.
+					
 				\end{column}
 				
 				\begin{column}{0.49\textwidth}
-					[7] Lucian Busoniu, Robert Babuska, and Bart De Schutter. \textit{A comprehensive survey of multiagent reinforcement learning}. IEEE Trans. Syst., Man, Cybern. C, 38(2):156--172, 2008.
 					
-					[8] Richard Jankowski. \textit{Punishment in iterated chicken and prisoner's dilemma games}. Rationality and Society, 2(4):449--470, 1990.
+					[7] L. Busoniu, R. Babuska, and B. De Schutter.
+					\textit{A Comprehensive Survey of Multiagent Reinforcement Learning}.
+					IEEE Trans. Syst., Man, Cybern. C, 38(2):156--172, 2008.
 					
-					[9] Sau-Him Paul Lau and Vai-Lam Mui. \textit{Using turn taking to achieve intertemporal cooperation and symmetry in infinitely repeated \(2\times2\) games}. Theory and Decision, 72(2):167--188, 2012.
+					[8] R. Jankowski.
+					\textit{Punishment in Iterated Chicken and Prisoner's Dilemma Games}.
+					Rationality and Society, 2(4):449--470, 1990.
 					
-					[10] Kazuki Ikeda and Shoto Aoki. \textit{Infinitely repeated quantum games and strategic efficiency}. Quantum Information Processing, 20(12), 2021.
+					[9] S.-H. Lau and V.-L. Mui.
+					\textit{Using Turn Taking to Achieve Intertemporal Cooperation in Infinitely Repeated \(2\times2\) Games}.
+					Theory and Decision, 72(2):167--188, 2012.
 					
-					[11] Thomas S. Ferguson. \textit{A Course in Game Theory}. World Scientific, 2020.
+					[10] K. Ikeda and S. Aoki.
+					\textit{Infinitely Repeated Quantum Games and Strategic Efficiency}.
+					Quantum Information Processing, 20(12), 2021.
+					
+					[11] T. Ferguson.
+					\textit{A Course in Game Theory}.
+					World Scientific, 2020.
+					
 				\end{column}
 				
 			\end{columns}
